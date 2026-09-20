@@ -1,7 +1,6 @@
 class Solution:
-    _LOOKUP = [0] * 123
-    for i in range(26):
-        _LOOKUP[97 + i] = 26 - i
     def reverseDegree(self, s: str) -> int:
-        lookup = self._LOOKUP
-        return sum(lookup[code] * i for i, code in enumerate(s.encode('ascii'), 1))
+        total_sum = 0
+        for i, char_code in enumerate(s.encode('ascii'), 1):
+            total_sum += (123 - char_code) * i
+        return total_sum
