@@ -9,6 +9,5 @@ class Solution:
             r -= nums[i+1]
             if l == r:
                 return i+1
-                break
         else:
             return -1
